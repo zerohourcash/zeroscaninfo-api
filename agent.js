@@ -3,8 +3,21 @@ const SocketClient = require('socket.io-client')
 module.exports = function(agent) {
   let tip = null
 
-  agent.messenger.on('egg-ready', () => {
-    let io = SocketClient(`http://localhost:${agent.config.qtuminfo.port}`)
+  function normalizeEndpoint(endpoint) {
+    return String(endpoint || '').replace(/\/+$/, '')
+  }
+
+  function createSocketClient(endpoint) {
+    return SocketClient(normalizeEndpoint(endpoint), {
+      transports: ['websocket', 'polling'],
+      reconnection: true,
+      reconnectionAttempts: Infinity,
+      reconnectionDelay: 1000,
+      timeout: 10000
+    })
+  }
+
+  function attachBlockchainEvents(io) {
     io.on('tip', newTip => {
       tip = newTip
       agent.messenger.sendToApp('block-tip', tip)
@@ -27,6 +40,17 @@ module.exports = function(agent) {
         agent.messenger.sendRandom('socket/mempool-transaction', id)
       }
     })
+  }
+
+  agent.messenger.on('egg-ready', () => {
+    const endpoints = agent.config.zeroscaninfo.endpoints &&
+      agent.config.zeroscaninfo.endpoints.length
+      ? agent.config.zeroscaninfo.endpoints
+      : [`http://localhost:${agent.config.zeroscaninfo.port}`]
+
+    for (const endpoint of endpoints) {
+      attachBlockchainEvents(createSocketClient(endpoint))
+    }
   })
 
   let lastTipHash = Buffer.alloc(0)

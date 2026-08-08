@@ -12,7 +12,7 @@ class AddressController extends Controller {
       unconfirmed: summary.unconfirmed.toString(),
       staking: summary.staking.toString(),
       mature: summary.mature.toString(),
-      qrc20Balances: summary.qrc20Balances.map(item => ({
+      zrc20Balances: summary.qrc20Balances.map(item => ({
         address: item.addressHex.toString('hex'),
         addressHex: item.addressHex.toString('hex'),
         name: item.name,
@@ -25,7 +25,7 @@ class AddressController extends Controller {
         },
         isUnconfirmed: item.isUnconfirmed
       })),
-      qrc721Balances: summary.qrc721Balances.map(item => ({
+      zrc721Balances: summary.qrc721Balances.map(item => ({
         address: item.addressHex.toString('hex'),
         addressHex: item.addressHex.toString('hex'),
         name: item.name,
@@ -233,7 +233,7 @@ class AddressController extends Controller {
   }
 
   async qrc20BalanceHistory() {
-    const {Address} = this.app.qtuminfo.lib
+    const {Address} = this.app.zeroscaninfo.lib
     let {ctx} = this
     let tokenAddress = null
     if (ctx.state.token) {

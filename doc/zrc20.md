@@ -1,16 +1,16 @@
-# QRC20 API
+# ZRC20 API
 
-- [QRC20 API](#QRC20-API)
-  - [QRC20 list](#QRC20-list)
-  - [QRC20 Transaction list](#QRC20-Transaction-list)
+- [ZRC20 API](#ZRC20-API)
+  - [ZRC20 list](#ZRC20-list)
+  - [ZRC20 Transaction list](#ZRC20-Transaction-list)
 
 
-## QRC20 list
-List all qrc20 tokens order by transfer transactions count.
+## ZRC20 list
+List all zrc20 tokens order by transfer transactions count.
 
 **Request URL**
 ```
-GET /qrc20
+GET /zrc20
 ```
 
 **Request Parameter**
@@ -25,7 +25,7 @@ GET /qrc20
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
@@ -35,7 +35,7 @@ GET /qrc20
 
 **Request**
 ```
-GET /qrc20?limit=10&offset=0
+GET /zrc20?limit=10&offset=0
 ```
 
 **Response**
@@ -158,11 +158,11 @@ GET /qrc20?limit=10&offset=0
 ```
 
 
-## QRC20 Transaction list
+## ZRC20 Transaction list
 
 **Request URL**
 ```
-GET /qrc20/:token/txs
+GET /zrc20/:token/txs
 ```
 
 **Request Parameter**
@@ -177,14 +177,14 @@ GET /qrc20/:token/txs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -203,7 +203,7 @@ GET /qrc20/:token/txs
 
 **Request**
 ```
-GET /qrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
+GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
 ```
 
 **Response**

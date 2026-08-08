@@ -6,13 +6,19 @@ class ContractController extends Controller {
     let summary = await ctx.service.contract.getContractSummary(
       ctx.state.contract.contractAddress, ctx.state.contract.addressIds
     )
+    let type = summary.type
+    if (summary.type === 'qrc20') {
+      type = 'zrc20'
+    } else if (summary.type === 'qrc721') {
+      type = 'zrc721'
+    }
     ctx.body = {
       address: summary.addressHex.toString('hex'),
       addressHex: summary.addressHex.toString('hex'),
       vm: summary.vm,
-      type: summary.type,
+      type,
       ...summary.type === 'qrc20' ? {
-        qrc20: {
+        zrc20: {
           name: summary.qrc20.name,
           symbol: summary.qrc20.symbol,
           decimals: summary.qrc20.decimals,
@@ -23,7 +29,7 @@ class ContractController extends Controller {
         }
       } : {},
       ...summary.type === 'qrc721' ? {
-        qrc721: {
+        zrc721: {
           name: summary.qrc721.name,
           symbol: summary.qrc721.symbol,
           totalSupply: summary.qrc721.totalSupply.toString()
@@ -33,7 +39,7 @@ class ContractController extends Controller {
       totalReceived: summary.totalReceived.toString(),
       totalSent: summary.totalSent.toString(),
       unconfirmed: summary.unconfirmed.toString(),
-      qrc20Balances: summary.qrc20Balances.map(item => ({
+      zrc20Balances: summary.qrc20Balances.map(item => ({
         address: item.addressHex.toString('hex'),
         addressHex: item.addressHex.toString('hex'),
         name: item.name,
@@ -41,7 +47,7 @@ class ContractController extends Controller {
         decimals: item.decimals,
         balance: item.balance.toString()
       })),
-      qrc721Balances: summary.qrc721Balances.map(item => ({
+      zrc721Balances: summary.qrc721Balances.map(item => ({
         address: item.addressHex.toString('hex'),
         addressHex: item.addressHex.toString('hex'),
         name: item.name,
@@ -150,7 +156,7 @@ class ContractController extends Controller {
   }
 
   async callContract() {
-    const {Address} = this.app.qtuminfo.lib
+    const {Address} = this.app.zeroscaninfo.lib
     let {ctx} = this
     let {data, sender} = ctx.query
     ctx.assert(ctx.state.contract.vm === 'evm', 400)

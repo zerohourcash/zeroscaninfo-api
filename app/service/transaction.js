@@ -10,7 +10,7 @@ class TransactionService extends Service {
       where, col
     } = this.ctx.model
     const {in: $in} = this.app.Sequelize.Op
-    const {Address: RawAddress} = this.app.qtuminfo.lib
+    const {Address: RawAddress} = this.app.zeroscaninfo.lib
 
     let transaction = await Transaction.findOne({
       where: {id},
@@ -370,14 +370,14 @@ class TransactionService extends Service {
             topics: this.transformTopics(log),
             data: log.data,
             ...log.qrc20 ? {
-              qrc20: {
+              zrc20: {
                 name: log.qrc20.name,
                 symbol: log.qrc20.symbol,
                 decimals: log.qrc20.decimals
               }
             } : {},
             ...log.qrc721 ? {
-              qrc721: {
+              zrc721: {
                 name: log.qrc721.name,
                 symbol: log.qrc721.symbol
               }
@@ -403,7 +403,7 @@ class TransactionService extends Service {
 
   async getRawTransaction(id) {
     const {Transaction, Witness, TransactionOutput, TransactionInput} = this.ctx.model
-    const {Transaction: RawTransaction, Input, Output, OutputScript} = this.app.qtuminfo.lib
+    const {Transaction: RawTransaction, Input, Output, OutputScript} = this.app.zeroscaninfo.lib
 
     let transaction = await Transaction.findOne({
       where: {id},
@@ -498,7 +498,7 @@ class TransactionService extends Service {
   }
 
   async getMempoolTransactionAddresses(id) {
-    const {Address: RawAddress} = this.app.qtuminfo.lib
+    const {Address: RawAddress} = this.app.zeroscaninfo.lib
     const {Address, Transaction, BalanceChange, EvmReceipt: EVMReceipt} = this.ctx.model
     let balanceChanges = await BalanceChange.findAll({
       attributes: [],
@@ -538,7 +538,7 @@ class TransactionService extends Service {
   }
 
   async sendRawTransaction(data) {
-    let client = new this.app.qtuminfo.rpc(this.app.config.qtuminfo.rpc)
+    let client = new this.app.zeroscaninfo.rpc(this.app.config.zeroscaninfo.rpc)
     let id = await client.sendrawtransaction(data.toString('hex'))
     return Buffer.from(id, 'hex')
   }
@@ -558,7 +558,7 @@ class TransactionService extends Service {
     let inputs = transaction.inputs.map((input, index) => this.transformInput(input, index, transaction, {brief}))
     let outputs = transaction.outputs.map((output, index) => this.transformOutput(output, index, {brief}))
 
-    let [qrc20TokenTransfers, qrc20TokenUnconfirmedTransfers, qrc721TokenTransfers] = await Promise.all([
+    let [zrc20TokenTransfers, zrc20TokenUnconfirmedTransfers, zrc721TokenTransfers] = await Promise.all([
       this.transformQRC20Transfers(transaction.outputs),
       confirmations === 0 ? this.transformQRC20UnconfirmedTransfers(transaction.outputs) : undefined,
       this.transformQRC721Transfers(transaction.outputs)
@@ -602,14 +602,14 @@ class TransactionService extends Service {
           }))
           : undefined
       },
-      qrc20TokenTransfers,
-      qrc20TokenUnconfirmedTransfers,
-      qrc721TokenTransfers
+      zrc20TokenTransfers,
+      zrc20TokenUnconfirmedTransfers,
+      zrc721TokenTransfers
     }
   }
 
   transformInput(input, index, transaction, {brief}) {
-    const {InputScript, OutputScript} = this.app.qtuminfo.lib
+    const {InputScript, OutputScript} = this.app.zeroscaninfo.lib
     let scriptSig = InputScript.fromBuffer(input.scriptSig, {
       scriptPubKey: OutputScript.fromBuffer(input.scriptPubKey || Buffer.alloc(0)),
       witness: input.witness,
@@ -639,7 +639,7 @@ class TransactionService extends Service {
   }
 
   transformOutput(output, index, {brief}) {
-    const {OutputScript} = this.app.qtuminfo.lib
+    const {OutputScript} = this.app.zeroscaninfo.lib
     let scriptPubKey = OutputScript.fromBuffer(output.scriptPubKey)
     let type = scriptPubKey.isEmpty() ? 'empty' : scriptPubKey.type
     let result = {
@@ -678,7 +678,7 @@ class TransactionService extends Service {
   }
 
   async transformQRC20Transfers(outputs) {
-    const TransferABI = this.app.qtuminfo.lib.Solidity.qrc20ABIs.find(abi => abi.name === 'Transfer')
+    const TransferABI = this.app.zeroscaninfo.lib.Solidity.qrc20ABIs.find(abi => abi.name === 'Transfer')
     let result = []
     for (let output of outputs) {
       if (output.evmReceipt) {
@@ -705,7 +705,7 @@ class TransactionService extends Service {
   }
 
   async transformQRC20UnconfirmedTransfers(outputs) {
-    const {OutputScript, Solidity} = this.app.qtuminfo.lib
+    const {OutputScript, Solidity} = this.app.zeroscaninfo.lib
     const transferABI = Solidity.qrc20ABIs.find(abi => abi.name === 'transfer')
     const {Qrc20: QRC20} = this.ctx.model
     let result = []
@@ -751,7 +751,7 @@ class TransactionService extends Service {
   }
 
   async transformQRC721Transfers(outputs) {
-    const TransferABI = this.app.qtuminfo.lib.Solidity.qrc20ABIs.find(abi => abi.name === 'Transfer')
+    const TransferABI = this.app.zeroscaninfo.lib.Solidity.qrc20ABIs.find(abi => abi.name === 'Transfer')
     let result = []
     for (let output of outputs) {
       if (output.evmReceipt) {
@@ -895,7 +895,7 @@ class TransactionService extends Service {
   }
 
   async getContractTransaction(receiptId) {
-    const {Address: RawAddress, OutputScript} = this.app.qtuminfo.lib
+    const {Address: RawAddress, OutputScript} = this.app.zeroscaninfo.lib
     const {
       Header, Address, Transaction, TransactionOutput,
       EvmReceipt: EVMReceipt, EvmReceiptLog: EVMReceiptLog, Contract,

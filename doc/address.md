@@ -6,10 +6,10 @@
   - [Address Transactions](#address-transactions)
   - [Address Basic Transactions](#address-basic-transactions)
   - [Address Contract Transactions](#address-contract-transactions)
-  - [Address QRC20 Token Transactions](#address-qrc20-token-transactions)
+  - [Address ZRC20 Token Transactions](#address-zrc20-token-transactions)
   - [Address UTXO List](#address-utxo-list)
   - [Address Balance History](#address-balance-history)
-  - [Address QRC20 Balance History](#address-qrc20-balance-history)
+  - [Address ZRC20 Balance History](#address-zrc20-balance-history)
 
 
 ## Address Information
@@ -33,7 +33,7 @@ GET /address/QQpX2WUPPdPXXL6AcwCX8KNHeDv7un2A4N
   "unconfirmed": "0",
   "staking": "0",
   "mature": "479862014295",
-  "qrc20Balances": [
+  "zrc20Balances": [
     {
       "address": "EJ28w1xczFNfHuB51qfpijv6NsurGskVeF",
       "addressHex": "09800417b097c61b9fd26b3ddde4238304a110d5",
@@ -131,7 +131,7 @@ GET /address/QQpX2WUPPdPXXL6AcwCX8KNHeDv7un2A4N
       "balance": "1000000000"
     }
   ],
-  "qrc721Balances": [],
+  "zrc721Balances": [],
   "ranking": 1125,
   "transactionCount": 130,
   "blocksMined": 0
@@ -193,14 +193,14 @@ GET /address/:address/txs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -243,7 +243,7 @@ GET /address/QZDJya5Szfux2op7qhHUGKsBT4eGiyTPkH/txs?limit=10&offset=0&reversed=f
 
 
 ## Address Basic Transactions
-Returns all transactions the address changes it's QTUM balance.
+Returns all transactions the address changes it's ZHC balance.
 
 **Request URL**
 ```
@@ -262,14 +262,14 @@ GET /address/:address/basic-txs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -377,14 +377,14 @@ GET /address/:address/contract-txs/:contract
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -783,11 +783,11 @@ GET /address/QaRg6Nrf5uMEggBGv8v8SpzdK6NqWZEf3F/contract-txs?limit=3&offset=10&f
 ```
 
 
-## Address QRC20 Token Transactions
+## Address ZRC20 Token Transactions
 
 **Request URL**
 ```
-GET /address/:address/qrc20-txs/:tokenAddress
+GET /address/:address/zrc20-txs/:tokenAddress
 ```
 
 **Request Parameters**
@@ -802,14 +802,14 @@ GET /address/:address/qrc20-txs/:tokenAddress
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -828,7 +828,7 @@ GET /address/:address/qrc20-txs/:tokenAddress
 
 **Request**
 ```
-GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/qrc20-txs/fe59cbc1704e89a698571413a81f0de9d8f00c69
+GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/zrc20-txs/fe59cbc1704e89a698571413a81f0de9d8f00c69
 ```
 
 **Response**
@@ -979,7 +979,7 @@ GET /address/:address/balance-history
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
@@ -1051,12 +1051,12 @@ GET /address/QReceive4V6rE6XU5dqoGLokwhcLnoKnUH/balance-history?limit=5&offset=0
 ```
 
 
-## Address QRC20 Balance History
+## Address ZRC20 Balance History
 
 **Request URL**
 ```
-GET /address/:address/qrc20-balance-history
-GET /address/:address/qrc20-balance-history/:token
+GET /address/:address/zrc20-balance-history
+GET /address/:address/zrc20-balance-history/:token
 ```
 
 **Request Parameters**
@@ -1071,7 +1071,7 @@ GET /address/:address/qrc20-balance-history/:token
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
@@ -1090,7 +1090,7 @@ GET /address/:address/qrc20-balance-history/:token
 
 **Request #1**
 ```
-GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/qrc20-balance-history?limit=5&offset=0
+GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/zrc20-balance-history?limit=5&offset=0
 ```
 
 **Response #1**
@@ -1189,7 +1189,7 @@ GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/qrc20-balance-history?limit=5&of
 
 **Request #2**
 ```
-GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/qrc20-balance-history/fe59cbc1704e89a698571413a81f0de9d8f00c69
+GET /address/QXUANYANRVAeX2Tomy9W1FTV6LQxWiNc99/zrc20-balance-history/fe59cbc1704e89a698571413a81f0de9d8f00c69
 ```
 
 **Response #2**

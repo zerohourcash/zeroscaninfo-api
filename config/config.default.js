@@ -8,7 +8,7 @@ const redisConfig = {
   db: 0
 }
 
-exports.keys = 'qtuminfo-api'
+exports.keys = 'zeroscaninfo-api'
 
 exports.security = {
   csrf: {enable: false}
@@ -36,7 +36,7 @@ exports.ratelimit = {
 exports.io = {
   redis: {
     ...redisConfig,
-    key: 'qtuminfo-api-socket.io'
+    key: 'zeroscaninfo-api-socket.io'
   },
   namespace: {
     '/': {connectionMiddleware: ['connection']}
@@ -45,20 +45,24 @@ exports.io = {
 
 exports.sequelize = {
   dialect: 'mysql',
-  database: 'qtum_mainnet',
+  database: process.env.ZEROSCANINFO_MYSQL_DATABASE || 'zhcash_mainnet',
   host: 'localhost',
   port: 3306,
-  username: 'qtum',
-  password: ''
+  username: process.env.ZEROSCANINFO_MYSQL_USER || 'zhcash',
+  password: process.env.ZEROSCANINFO_MYSQL_PASSWORD || ''
 }
 
-exports.qtum = {
+exports.zhcash = {
   chain: 'mainnet'
 }
 
-exports.qtuminfo = {
-  path: path.resolve('..', 'qtuminfo'),
+exports.zeroscaninfo = {
+  path: path.resolve('..', 'zeroscaninfo'),
   port: 3001,
+  endpoints: [
+    process.env.ZEROSCANINFO_PRIMARY || 'https://ws.zeroscan.st',
+    process.env.ZEROSCANINFO_SECONDARY || 'https://ws.zeroscan.io'
+  ],
   rpc: {
     protocol: 'http',
     host: 'localhost',
@@ -68,4 +72,4 @@ exports.qtuminfo = {
   }
 }
 
-exports.cmcAPIKey = null
+exports.coingeckoCoinId = process.env.ZEROSCANINFO_COINGECKO_COIN_ID || 'zhc-zero-hour-cash'

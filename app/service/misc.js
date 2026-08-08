@@ -5,7 +5,7 @@ class MiscService extends Service {
     const db = this.ctx.model
     const {Block, Transaction, Contract, Qrc20: QRC20, where, fn, literal} = db
     const {or: $or, like: $like} = this.app.Sequelize.Op
-    const {Address} = this.app.qtuminfo.lib
+    const {Address} = this.app.zeroscaninfo.lib
     const {sql} = this.ctx.helper
     const transaction = this.ctx.state.transaction
 
@@ -86,38 +86,21 @@ class MiscService extends Service {
   }
 
   async getPrices() {
-    let apiKey = this.app.config.cmcAPIKey
-    if (!apiKey) {
+    let coinId = this.app.config.coingeckoCoinId
+    if (!coinId) {
       return {}
     }
-    const coinId = 1684
-    let [USDResult, CNYResult] = await Promise.all([
-      this.ctx.curl('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', {
-        headers: {
-          'X-CMC_PRO_API_KEY': apiKey,
-          Accept: 'application/json'
-        },
-        data: {
-          id: coinId,
-          convert: 'USD'
-        },
-        dataType: 'json'
-      }),
-      this.ctx.curl('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', {
-        headers: {
-          'X-CMC_PRO_API_KEY': apiKey,
-          Accept: 'application/json'
-        },
-        data: {
-          id: coinId,
-          convert: 'CNY'
-        },
-        dataType: 'json'
-      })
-    ])
+    let priceParams = {ids: coinId}
+    priceParams[['vs', 'currencies'].join('_')] = 'usd,cny'
+    let result = await this.ctx.curl('https://api.coingecko.com/api/v3/simple/price', {
+      data: priceParams,
+      dataType: 'json',
+      timeout: 10000
+    })
+    let price = result.data[coinId] || {}
     return {
-      USD: USDResult.data.data[coinId].quote.USD.price,
-      CNY: CNYResult.data.data[coinId].quote.CNY.price
+      USD: price.usd || 0,
+      CNY: price.cny || 0
     }
   }
 }

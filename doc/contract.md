@@ -26,8 +26,8 @@ GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
   "address": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
   "addressHex": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
   "vm": "evm",
-  "type": "qrc20",
-  "qrc20": {
+  "type": "zrc20",
+  "zrc20": {
     "name": "Bodhi Token",
     "symbol": "BOT",
     "decimals": 8,
@@ -40,8 +40,8 @@ GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
   "totalReceived": "1086500002",
   "totalSent": "1086500002",
   "unconfirmed": "0",
-  "qrc20Balances": [],
-  "qrc721Balances": [],
+  "zrc20Balances": [],
+  "zrc721Balances": [],
   "transactionCount": 20572
 }
 ```
@@ -66,14 +66,14 @@ GET /contract/:contract/txs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -135,14 +135,14 @@ GET /contract/:contract/basic-txs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
@@ -354,14 +354,14 @@ GET /searchlogs
     <tbody>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Pagination-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Pagination-Parameters">
                 Pagination Parameters
               </a>
             </td>
         </tr>
         <tr>
             <td colspan="3">
-              <a href="https://github.com/qtumproject/qtuminfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
+              <a href="https://github.com/zerohourcash/zeroscaninfo-api/blob/master/README.md#Block--Timestamp-Filter-Parameters">
                 Block / Timestamp Filter Parameters
               </a>
             </td>
