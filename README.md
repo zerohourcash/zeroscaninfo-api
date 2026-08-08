@@ -46,26 +46,26 @@
 
 These examples use live ZHCASH data from zeroscan and are safe for API smoke checks:
 
-* Example ZHCASH address with OK token balance: `ZENBeC316wc8hChYPSCteWz3X188nTRkyE`
+* Example live ZHCASH address: `ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi`
 * OK token contract: `e66c1aeba394ccda63c7644d68b4c771ef6548d9`
 * OK token page: `https://zeroscan.st/contract/e66c1aeba394ccda63c7644d68b4c771ef6548d9`
 
 Useful requests:
 
 ```text
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
+GET /address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi
 ```
-<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE>
+<https://ws.zeroscan.st/address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi>
 
 ```text
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
+GET /address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi/balance
 ```
-<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance>
+<https://ws.zeroscan.st/address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi/balance>
 
 ```text
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9
+GET /address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9
 ```
-<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9>
+<https://ws.zeroscan.st/address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9>
 
 ```text
 GET /zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
