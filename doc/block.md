@@ -11,13 +11,17 @@
 **Request URL**
 ```
 GET /block/:height
+Open: https://ws.zeroscan.st/block/:height
 GET /block/:hash
+Open: https://ws.zeroscan.st/block/:hash
 ```
 
 **Request**
 ```
 GET /block/400000
+Open: https://ws.zeroscan.st/block/400000
 GET /block/14f9d58d8f96d3a685808a8be3e5f2743dd71cb1af54fb8a134b9a1bc8bc20b8
+Open: https://ws.zeroscan.st/block/14f9d58d8f96d3a685808a8be3e5f2743dd71cb1af54fb8a134b9a1bc8bc20b8
 ```
 
 **Response**
@@ -59,6 +63,7 @@ GET /block/14f9d58d8f96d3a685808a8be3e5f2743dd71cb1af54fb8a134b9a1bc8bc20b8
 **Request URL**
 ```
 GET /blocks
+Open: https://ws.zeroscan.st/blocks
 ```
 **Request Params**
 <table>
@@ -85,6 +90,7 @@ GET /blocks
 **Request**
 ```
 GET /blocks?date=2019-01-01
+Open: https://ws.zeroscan.st/blocks?date=2019-01-01
 ```
 
 **Response**
@@ -160,6 +166,7 @@ GET /blocks?date=2019-01-01
 **Request URL**
 ```
 GET /recent-blocks
+Open: https://ws.zeroscan.st/recent-blocks
 ```
 **Request Params**
 <table>
@@ -188,6 +195,7 @@ GET /recent-blocks
 **Request**
 ```
 GET /recent-blocks?count=5
+Open: https://ws.zeroscan.st/recent-blocks?count=5
 ```
 
 **Response**

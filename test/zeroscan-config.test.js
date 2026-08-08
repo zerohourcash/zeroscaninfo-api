@@ -25,6 +25,21 @@ function listFiles(dir) {
   return result
 }
 
+function assertGetExamplesHaveZeroscanLinks(relativePath) {
+  const lines = read(relativePath).split('\n')
+  for (let i = 0; i < lines.length; i++) {
+    const match = lines[i].match(/^GET (\/\S+)$/)
+    if (!match) {
+      continue
+    }
+    assert.strictEqual(
+      lines[i + 1],
+      `Open: https://ws.zeroscan.st${match[1]}`,
+      `${relativePath}:${i + 1} GET example must be followed by ws.zeroscan.st link`
+    )
+  }
+}
+
 function extractRouterPaths() {
   const router = read('app/router.js')
   const paths = []
@@ -64,6 +79,8 @@ function assertNoLegacyBranding(relativePath) {
 for (const file of ['README.md', 'config/config.default.js', 'agent.js', 'app/extend/application.js']) {
   assertNoLegacyBranding(file)
 }
+
+assertGetExamplesHaveZeroscanLinks('README.md')
 
 {
   const config = read('config/config.default.js')
@@ -117,6 +134,7 @@ for (const file of ['README.md', 'config/config.default.js', 'agent.js', 'app/ex
     assert(!new RegExp(legacyToken721, 'i').test(content), `${file} still contains legacy token721 name`)
     assert(!legacyBase58AddressPattern.test(content), `${file} still contains Qtum-style Q address examples`)
     assert(!legacyContractAddressPattern.test(content), `${file} still contains legacy E contract address examples`)
+    assertGetExamplesHaveZeroscanLinks(file)
   }
 }
 

@@ -13,11 +13,13 @@
 **Request URL**
 ```
 GET /contract/:contract
+Open: https://ws.zeroscan.st/contract/:contract
 ```
 
 **Request**
 ```
 GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
+Open: https://ws.zeroscan.st/contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
 ```
 
 **Response**
@@ -52,6 +54,7 @@ GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7
 **Request URL**
 ```
 GET /contract/:contract/txs
+Open: https://ws.zeroscan.st/contract/:contract/txs
 ```
 
 **Request Parameters**
@@ -93,6 +96,7 @@ GET /contract/:contract/txs
 **Request**
 ```
 GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/txs?limit=10&offset=10
+Open: https://ws.zeroscan.st/contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/txs?limit=10&offset=10
 ```
 
 **Response**
@@ -121,6 +125,7 @@ List of transactions the contract is called.
 **Request URL**
 ```
 GET /contract/:contract/basic-txs
+Open: https://ws.zeroscan.st/contract/:contract/basic-txs
 ```
 
 **Request Parameters**
@@ -162,6 +167,7 @@ GET /contract/:contract/basic-txs
 **Request**
 ```
 GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/basic-txs?limit=3&offset=10
+Open: https://ws.zeroscan.st/contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/basic-txs?limit=3&offset=10
 ```
 
 **Response**
@@ -273,6 +279,7 @@ Returns RPC `callcontract` result.
 **Request URL**
 ```
 GET /contract/:contract/call
+Open: https://ws.zeroscan.st/contract/:contract/call
 ```
 
 **Request Parameters**
@@ -309,6 +316,7 @@ GET /contract/:contract/call
 **Request**
 ```
 GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/call?data=313ce567
+Open: https://ws.zeroscan.st/contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/call?data=313ce567
 ```
 
 **Response**
@@ -340,6 +348,7 @@ GET /contract/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7/call?data=313ce567
 **Request URL**
 ```
 GET /searchlogs
+Open: https://ws.zeroscan.st/searchlogs
 ```
 
 **Request Parameters**
@@ -417,6 +426,7 @@ GET /searchlogs
 **Request**
 ```
 GET /searchlogs?contract=056168620105d8f73a55d8c6542b565aea3665ec&topic1=2b37430897e8d659983fc8ae7ab83ad5b3be5a7db7ea0add5706731c2395f550
+Open: https://ws.zeroscan.st/searchlogs?contract=056168620105d8f73a55d8c6542b565aea3665ec&topic1=2b37430897e8d659983fc8ae7ab83ad5b3be5a7db7ea0add5706731c2395f550
 ```
 
 **Response**

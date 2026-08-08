@@ -11,6 +11,7 @@
 **Request**
 ```
 GET /info
+Open: https://ws.zeroscan.st/info
 ```
 
 **Response**
@@ -35,6 +36,7 @@ GET /info
 **Request**
 ```
 GET /supply
+Open: https://ws.zeroscan.st/supply
 ```
 
 **Response**
@@ -48,6 +50,7 @@ GET /supply
 **Request**
 ```
 GET /total-max-supply
+Open: https://ws.zeroscan.st/total-max-supply
 ```
 
 **Response**

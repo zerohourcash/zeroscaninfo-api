@@ -11,11 +11,13 @@
 **Request URL**
 ```
 GET /tx/:id
+Open: https://ws.zeroscan.st/tx/:id
 ```
 
 **Request #1**
 ```
 GET /tx/870c6b51d4160b52ce2bd506d0cd7a8438b8aac9afd03c4695f6ab9648bd02dc
+Open: https://ws.zeroscan.st/tx/870c6b51d4160b52ce2bd506d0cd7a8438b8aac9afd03c4695f6ab9648bd02dc
 ```
 
 **Response #1**
@@ -114,6 +116,7 @@ GET /tx/870c6b51d4160b52ce2bd506d0cd7a8438b8aac9afd03c4695f6ab9648bd02dc
 **Request #2**
 ```
 GET /tx/f56ea462337e4732e821eb7ceee5208a5c807fe5f918a342298eb152d75765ee
+Open: https://ws.zeroscan.st/tx/f56ea462337e4732e821eb7ceee5208a5c807fe5f918a342298eb152d75765ee
 ```
 
 **Response #2**
@@ -224,6 +227,7 @@ GET /tx/f56ea462337e4732e821eb7ceee5208a5c807fe5f918a342298eb152d75765ee
 **Request #3**
 ```
 GET /tx/ebf05fbf8dcf10f03a73331abd1ea934d66c03a72ee4a57addeab0225ad9289f
+Open: https://ws.zeroscan.st/tx/ebf05fbf8dcf10f03a73331abd1ea934d66c03a72ee4a57addeab0225ad9289f
 ```
 
 **Response #3**
@@ -321,11 +325,13 @@ GET /tx/ebf05fbf8dcf10f03a73331abd1ea934d66c03a72ee4a57addeab0225ad9289f
 **Request URL**
 ```
 GET /raw-tx/:id
+Open: https://ws.zeroscan.st/raw-tx/:id
 ```
 
 **Request**
 ```
 GET /tx/ebf05fbf8dcf10f03a73331abd1ea934d66c03a72ee4a57addeab0225ad9289f
+Open: https://ws.zeroscan.st/tx/ebf05fbf8dcf10f03a73331abd1ea934d66c03a72ee4a57addeab0225ad9289f
 ```
 
 **Response**
