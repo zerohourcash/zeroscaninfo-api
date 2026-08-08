@@ -11,8 +11,8 @@ List all zrc20 tokens order by transfer transactions count.
 **Request URL**
 ```
 GET /zrc20
-Open: https://ws.zeroscan.st/zrc20
 ```
+<https://ws.zeroscan.st/zrc20>
 
 **Request Parameter**
 <table>
@@ -37,8 +37,8 @@ Open: https://ws.zeroscan.st/zrc20
 **Request**
 ```
 GET /zrc20?limit=10&offset=0
-Open: https://ws.zeroscan.st/zrc20?limit=10&offset=0
 ```
+<https://ws.zeroscan.st/zrc20?limit=10&offset=0>
 
 **Response**
 ```json
@@ -165,7 +165,6 @@ Open: https://ws.zeroscan.st/zrc20?limit=10&offset=0
 **Request URL**
 ```
 GET /zrc20/:token/txs
-Open: https://ws.zeroscan.st/zrc20/:token/txs
 ```
 
 **Request Parameter**
@@ -207,8 +206,8 @@ Open: https://ws.zeroscan.st/zrc20/:token/txs
 **Request**
 ```
 GET /zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
-Open: https://ws.zeroscan.st/zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
 ```
+<https://ws.zeroscan.st/zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0>
 
 **Response**
 ```json

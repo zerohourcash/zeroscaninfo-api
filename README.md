@@ -54,14 +54,23 @@ Useful requests:
 
 ```text
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9
-GET /zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
-Open: https://ws.zeroscan.st/zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE>
+
+```text
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance>
+
+```text
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance/e66c1aeba394ccda63c7644d68b4c771ef6548d9>
+
+```text
+GET /zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
+```
+<https://ws.zeroscan.st/zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0>
 
 
 ## Pagination Parameters

@@ -17,14 +17,13 @@
 **Request URL**
 ```
 GET /address/:address
-Open: https://ws.zeroscan.st/address/:address
 ```
 
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE>
 
 **Response**
 ```json
@@ -146,36 +145,44 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE
 **Request URL**
 ```
 GET /address/:address/balance
-Open: https://ws.zeroscan.st/address/:address/balance
 GET /address/:address/balance/:category
-Open: https://ws.zeroscan.st/address/:address/balance/:category
 GET /address/:address/balance/total-received
-Open: https://ws.zeroscan.st/address/:address/balance/total-received
 GET /address/:address/balance/total-sent
-Open: https://ws.zeroscan.st/address/:address/balance/total-sent
 GET /address/:address/balance/unconfirmed
-Open: https://ws.zeroscan.st/address/:address/balance/unconfirmed
 GET /address/:address/balance/staking
-Open: https://ws.zeroscan.st/address/:address/balance/staking
 GET /address/:address/balance/mature
-Open: https://ws.zeroscan.st/address/:address/balance/mature
 ```
 
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-received
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-received
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-sent
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-sent
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/unconfirmed
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/unconfirmed
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/staking
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/staking
-GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/mature
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/mature
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance>
+
+```
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-received
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-received>
+
+```
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-sent
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/total-sent>
+
+```
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/unconfirmed
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/unconfirmed>
+
+```
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/staking
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/staking>
+
+```
+GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/mature
+```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance/mature>
 
 **Response**
 ```
@@ -194,7 +201,6 @@ Returns all transaction ids the address related to.
 **Request URL**
 ```
 GET /address/:address/txs
-Open: https://ws.zeroscan.st/address/:address/txs
 ```
 
 **Request Parameters**
@@ -236,8 +242,8 @@ Open: https://ws.zeroscan.st/address/:address/txs
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/txs?limit=10&offset=0&reversed=false
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/txs?limit=10&offset=0&reversed=false
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/txs?limit=10&offset=0&reversed=false>
 
 **Response**
 ```json
@@ -265,7 +271,6 @@ Returns all transactions the address changes it's ZHC balance.
 **Request URL**
 ```
 GET /address/:address/basic-txs
-Open: https://ws.zeroscan.st/address/:address/basic-txs
 ```
 
 **Request Parameters**
@@ -307,8 +312,8 @@ Open: https://ws.zeroscan.st/address/:address/basic-txs
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/basic-txs?limit=5&offset=0&fromBlock=90000&toBlock=100000
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/basic-txs?limit=5&offset=0&fromBlock=90000&toBlock=100000
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/basic-txs?limit=5&offset=0&fromBlock=90000&toBlock=100000>
 
 **Response**
 ```json
@@ -381,9 +386,7 @@ Returns all transactions the address calls a contract.
 **Request URL**
 ```
 GET /address/:address/contract-txs
-Open: https://ws.zeroscan.st/address/:address/contract-txs
 GET /address/:address/contract-txs/:contract
-Open: https://ws.zeroscan.st/address/:address/contract-txs/:contract
 ```
 
 **Request Parameters**
@@ -425,8 +428,8 @@ Open: https://ws.zeroscan.st/address/:address/contract-txs/:contract
 **Request #1**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7?limit=3&offset=0
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7?limit=3&offset=0
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs/6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7?limit=3&offset=0>
 
 **Response #1**
 ```json
@@ -577,8 +580,8 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract
 **Request #2**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs?limit=3&offset=10&fromBlock=160000&toBlock=170000
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs?limit=3&offset=10&fromBlock=160000&toBlock=170000
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract-txs?limit=3&offset=10&fromBlock=160000&toBlock=170000>
 
 **Response #2**
 ```json
@@ -811,7 +814,6 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/contract
 **Request URL**
 ```
 GET /address/:address/zrc20-txs/:tokenAddress
-Open: https://ws.zeroscan.st/address/:address/zrc20-txs/:tokenAddress
 ```
 
 **Request Parameters**
@@ -853,8 +855,8 @@ Open: https://ws.zeroscan.st/address/:address/zrc20-txs/:tokenAddress
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-txs/e66c1aeba394ccda63c7644d68b4c771ef6548d9
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-txs/e66c1aeba394ccda63c7644d68b4c771ef6548d9
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-txs/e66c1aeba394ccda63c7644d68b4c771ef6548d9>
 
 **Response**
 ```json
@@ -926,7 +928,6 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-tx
 **Request URL**
 ```
 GET /address/:address/utxo
-Open: https://ws.zeroscan.st/address/:address/utxo
 ```
 
 **Request**
@@ -991,7 +992,6 @@ Open: https://ws.zeroscan.st/address/:address/utxo
 **Request URL**
 ```
 GET /address/:address/balance-history
-Open: https://ws.zeroscan.st/address/:address/balance-history
 ```
 
 **Request Parameters**
@@ -1026,8 +1026,8 @@ Open: https://ws.zeroscan.st/address/:address/balance-history
 **Request**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance-history?limit=5&offset=0
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance-history?limit=5&offset=0
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance-history?limit=5&offset=0>
 
 **Response**
 ```json
@@ -1084,9 +1084,7 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/balance-
 **Request URL**
 ```
 GET /address/:address/zrc20-balance-history
-Open: https://ws.zeroscan.st/address/:address/zrc20-balance-history
 GET /address/:address/zrc20-balance-history/:token
-Open: https://ws.zeroscan.st/address/:address/zrc20-balance-history/:token
 ```
 
 **Request Parameters**
@@ -1121,8 +1119,8 @@ Open: https://ws.zeroscan.st/address/:address/zrc20-balance-history/:token
 **Request #1**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history?limit=5&offset=0
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history?limit=5&offset=0
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history?limit=5&offset=0>
 
 **Response #1**
 ```json
@@ -1221,8 +1219,8 @@ Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-ba
 **Request #2**
 ```
 GET /address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history/e66c1aeba394ccda63c7644d68b4c771ef6548d9
-Open: https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history/e66c1aeba394ccda63c7644d68b4c771ef6548d9
 ```
+<https://ws.zeroscan.st/address/ZENBeC316wc8hChYPSCteWz3X188nTRkyE/zrc20-balance-history/e66c1aeba394ccda63c7644d68b4c771ef6548d9>
 
 **Response #2**
 ```json

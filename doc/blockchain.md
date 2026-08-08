@@ -11,8 +11,8 @@
 **Request**
 ```
 GET /info
-Open: https://ws.zeroscan.st/info
 ```
+<https://ws.zeroscan.st/info>
 
 **Response**
 ```json
@@ -36,8 +36,8 @@ Open: https://ws.zeroscan.st/info
 **Request**
 ```
 GET /supply
-Open: https://ws.zeroscan.st/supply
 ```
+<https://ws.zeroscan.st/supply>
 
 **Response**
 ```json
@@ -50,8 +50,8 @@ Open: https://ws.zeroscan.st/supply
 **Request**
 ```
 GET /total-max-supply
-Open: https://ws.zeroscan.st/total-max-supply
 ```
+<https://ws.zeroscan.st/total-max-supply>
 
 **Response**
 ```json

@@ -25,17 +25,41 @@ function listFiles(dir) {
   return result
 }
 
-function assertGetExamplesHaveZeroscanLinks(relativePath) {
+function assertGetExamplesHaveClickableZeroscanLinks(relativePath) {
   const lines = read(relativePath).split('\n')
+  let inFence = false
   for (let i = 0; i < lines.length; i++) {
+    if (lines[i].startsWith('```')) {
+      inFence = !inFence
+      continue
+    }
     const match = lines[i].match(/^GET (\/\S+)$/)
     if (!match) {
       continue
     }
+    if (match[1].includes(':')) {
+      assert.notStrictEqual(
+        lines[i + 1],
+        `Open: https://ws.zeroscan.st${match[1]}`,
+        `${relativePath}:${i + 1} template GET example must not have a non-clickable ws.zeroscan.st link`
+      )
+      assert.notStrictEqual(
+        lines[i + 2],
+        `<https://ws.zeroscan.st${match[1]}>`,
+        `${relativePath}:${i + 1} template GET example must not have a clickable ws.zeroscan.st link`
+      )
+      continue
+    }
+    assert(inFence, `${relativePath}:${i + 1} GET example must be in a code block`)
     assert.strictEqual(
       lines[i + 1],
-      `Open: https://ws.zeroscan.st${match[1]}`,
-      `${relativePath}:${i + 1} GET example must be followed by ws.zeroscan.st link`
+      '```',
+      `${relativePath}:${i + 1} concrete GET example must close the code block before the link`
+    )
+    assert.strictEqual(
+      lines[i + 2],
+      `<https://ws.zeroscan.st${match[1]}>`,
+      `${relativePath}:${i + 1} concrete GET example must be followed by a clickable ws.zeroscan.st link without label`
     )
   }
 }
@@ -80,7 +104,7 @@ for (const file of ['README.md', 'config/config.default.js', 'agent.js', 'app/ex
   assertNoLegacyBranding(file)
 }
 
-assertGetExamplesHaveZeroscanLinks('README.md')
+assertGetExamplesHaveClickableZeroscanLinks('README.md')
 
 {
   const config = read('config/config.default.js')
@@ -134,7 +158,7 @@ assertGetExamplesHaveZeroscanLinks('README.md')
     assert(!new RegExp(legacyToken721, 'i').test(content), `${file} still contains legacy token721 name`)
     assert(!legacyBase58AddressPattern.test(content), `${file} still contains Qtum-style Q address examples`)
     assert(!legacyContractAddressPattern.test(content), `${file} still contains legacy E contract address examples`)
-    assertGetExamplesHaveZeroscanLinks(file)
+    assertGetExamplesHaveClickableZeroscanLinks(file)
   }
 }
 
