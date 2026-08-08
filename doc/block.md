@@ -46,7 +46,7 @@ GET /block/14f9d58d8f96d3a685808a8be3e5f2743dd71cb1af54fb8a134b9a1bc8bc20b8
     "50c7c324f59729da9b30f72cda43de64ef69fa7b617428c69cd1946931ff40b2",
     "89a16f4ce26db8029a835df02f46e0416fe729eee1da8b95225cb35a30fc78f9"
   ],
-  "miner": "Qhyek8Kn36vCKSdkcmbSFdR1XfKRKGX6hP",
+  "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
   "difficulty": 1578241.9071624815,
   "reward": "400000000",
   "confirmations": 5970
@@ -97,7 +97,7 @@ GET /blocks?date=2019-01-01
     "interval": 208,
     "size": 1668,
     "transactionCount": 5,
-    "miner": "QiRx4CWwVHNqWf3dLW12kcnwRovSw8w9K6",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "402883776"
   },
   {
@@ -107,7 +107,7 @@ GET /blocks?date=2019-01-01
     "interval": 496,
     "size": 3178,
     "transactionCount": 5,
-    "miner": "QYHV93kbN9osowPHTWHjeYzgrmZasdatov",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "404394122"
   },
   {
@@ -117,7 +117,7 @@ GET /blocks?date=2019-01-01
     "interval": 64,
     "size": 928,
     "transactionCount": 2,
-    "miner": "QdB6krR2kgssX7xnx8E9JPrRktfSBRBrEa",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "400000000"
   },
   // ... 592 more items ...
@@ -128,7 +128,7 @@ GET /blocks?date=2019-01-01
     "interval": 16,
     "size": 1152,
     "transactionCount": 3,
-    "miner": "Qgdj4FrXXxLVkxPDYtFNNGZNd9TJrNjtpM",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "404833647"
   },
   {
@@ -138,7 +138,7 @@ GET /blocks?date=2019-01-01
     "interval": 32,
     "size": 1597,
     "transactionCount": 4,
-    "miner": "QNLZS9sVUTTZZQ6UfaDnAwTQifbKWFZwmP",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "407149600"
   },
   {
@@ -148,7 +148,7 @@ GET /blocks?date=2019-01-01
     "interval": 512,
     "size": 2008,
     "transactionCount": 6,
-    "miner": "QgYB6x5RQBGgGL2R7Qe6WJAsUE4ZkdBj7Z",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "422733104"
   }
 ]
@@ -200,7 +200,7 @@ GET /recent-blocks?count=5
     "interval": 32,
     "size": 882,
     "transactionCount": 2,
-    "miner": "QX8U4uMCaQzoLv6rcBvN4dBk9xYPi8TkcR",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "400000000"
   },
   {
@@ -210,7 +210,7 @@ GET /recent-blocks?count=5
     "interval": 112,
     "size": 1151,
     "transactionCount": 3,
-    "miner": "QQrm6av1tWtTmvkTpft3FygcmLFcrEWGWk",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "400090427"
   },
   {
@@ -220,7 +220,7 @@ GET /recent-blocks?count=5
     "interval": 80,
     "size": 1406,
     "transactionCount": 3,
-    "miner": "QXDkSQAFEneCaPMC4ML6w8kmcrYxhsz4Qv",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "402233609"
   },
   {
@@ -230,7 +230,7 @@ GET /recent-blocks?count=5
     "interval": 320,
     "size": 11337,
     "transactionCount": 7,
-    "miner": "QhUdHBgHcW7rTYxtzbs3By4nz9sggE5EbV",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "408284149"
   },
   {
@@ -240,7 +240,7 @@ GET /recent-blocks?count=5
     "interval": 240,
     "size": 1852,
     "transactionCount": 5,
-    "miner": "QWKsTwTkH5n2qp1ivWp6ropknSsqKj9NXY",
+    "miner": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
     "reward": "400409061"
   }
 ]

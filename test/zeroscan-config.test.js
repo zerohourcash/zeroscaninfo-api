@@ -42,6 +42,10 @@ const legacyApi = [legacyInfo, '-api'].join('')
 const legacyGithub = ['github.com/', legacyChain, 'project/', legacyApi].join('')
 const legacyToken20 = ['q', 'rc20'].join('')
 const legacyToken721 = ['q', 'rc721'].join('')
+const zhcExampleAddress = 'ZENBeC316wc8hChYPSCteWz3X188nTRkyE'
+const okTokenContract = 'e66c1aeba394ccda63c7644d68b4c771ef6548d9'
+const legacyBase58AddressPattern = /\bQ[A-HJ-NP-Za-km-z1-9]{25,40}\b/
+const legacyContractAddressPattern = /\bE[A-HJ-NP-Za-km-z1-9]{25,40}\b/
 
 function assertNoLegacyBranding(relativePath) {
   const content = read(relativePath)
@@ -111,6 +115,8 @@ for (const file of ['README.md', 'config/config.default.js', 'agent.js', 'app/ex
     assert(!new RegExp(legacyGithub, 'i').test(content), `${file} still links to legacy upstream docs`)
     assert(!new RegExp(legacyToken20, 'i').test(content), `${file} still contains legacy token20 name`)
     assert(!new RegExp(legacyToken721, 'i').test(content), `${file} still contains legacy token721 name`)
+    assert(!legacyBase58AddressPattern.test(content), `${file} still contains Qtum-style Q address examples`)
+    assert(!legacyContractAddressPattern.test(content), `${file} still contains legacy E contract address examples`)
   }
 }
 
@@ -118,8 +124,19 @@ for (const file of ['README.md', 'config/config.default.js', 'agent.js', 'app/ex
   const readme = read('README.md')
   assert(readme.includes('ZRC20'), 'README must document ZRC20')
   assert(readme.includes('ZRC721'), 'README must document ZRC721')
+  assert(readme.includes(zhcExampleAddress), 'README must include the checked ZHCASH example address')
+  assert(readme.includes(okTokenContract), 'README must include the checked OK token contract')
   assert(!new RegExp(legacyToken20, 'i').test(readme), 'README still contains legacy token20 name')
   assert(!new RegExp(legacyToken721, 'i').test(readme), 'README still contains legacy token721 name')
+  assert(!legacyBase58AddressPattern.test(readme), 'README still contains Qtum-style Q address examples')
+  assert(!legacyContractAddressPattern.test(readme), 'README still contains legacy E contract address examples')
+}
+
+{
+  const docs = listFiles('doc').filter(file => file.endsWith('.md'))
+  const combinedDocs = docs.map(read).join('\n')
+  assert(combinedDocs.includes(zhcExampleAddress), 'docs must include the checked ZHCASH example address')
+  assert(combinedDocs.includes(okTokenContract), 'docs must include the checked OK token contract')
 }
 
 console.log('zeroscan-config tests passed')

@@ -44,10 +44,10 @@ GET /zrc20?limit=10&offset=0
   "totalCount": 184,
   "tokens": [
     {
-      "address": "EfDYuWmSUbZPaAe2qzeWurcDGobSnhYa6F",
-      "addressHex": "f2033ede578e17fa6231047265010445bca8cf1c",
-      "name": "QCASH",
-      "symbol": "QC",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
+      "addressHex": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
+      "name": "OK v.1.1",
+      "symbol": "Ok",
       "decimals": 8,
       "totalSupply": "1000000000000000000",
       "version": null,
@@ -55,10 +55,10 @@ GET /zrc20?limit=10&offset=0
       "transactions": 133347
     },
     {
-      "address": "EgLnhSREpcpnrmSHp3uKQT1nPjhiV7DEx9",
-      "addressHex": "fe59cbc1704e89a698571413a81f0de9d8f00c69",
-      "name": "INK Coin",
-      "symbol": "INK",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
+      "addressHex": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
+      "name": "OK v.1.1",
+      "symbol": "Ok",
       "decimals": 9,
       "totalSupply": "1000000000000000000",
       "version": null,
@@ -66,7 +66,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 75033
     },
     {
-      "address": "ERPLiez3T9MQ21tz9B8kLmajK7xQWrkS6B",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "5a4b7889cad562d6c099bf877c8f5e3d66d579f8",
       "name": "FENIX.CASH",
       "symbol": "FENIX",
@@ -77,7 +77,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 60343
     },
     {
-      "address": "ER8xXcVq6HmXLfPUKmQpusvtxoHoAM9uC3",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "57931faffdec114056a49adfcaa1caac159a1a25",
       "name": "SpaceCash",
       "symbol": "SPC",
@@ -88,7 +88,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 50625
     },
     {
-      "address": "ESxZUjVBnbeeEyx7E1WhwviAujfRmfCgjU",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "6b8bf98ff497c064e8f0bde13e0c4f5ed5bf8ce7",
       "name": "Bodhi Token",
       "symbol": "BOT",
@@ -99,7 +99,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 49624
     },
     {
-      "address": "EfFoUtTKMVcWHKJeByQate1jdCkYTXHaBC",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "f2703e93f87b846a7aacec1247beaec1c583daa4",
       "name": "Hyperpay",
       "symbol": "HPY",
@@ -110,7 +110,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 42171
     },
     {
-      "address": "EPr1RrYoNpHPiHFV1R1mHjJf6TfzFJXuTd",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "49665919e437a4bedb92faa45ed33ebb5a33ee63",
       "name": "AWARE Token",
       "symbol": "AWR",
@@ -121,7 +121,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 37871
     },
     {
-      "address": "EZRg6Xhqe3V7Sva29irwZHj9LwcoknARtR",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "b27d7bf95b03e02b55d5eb63d3f1692762101bf9",
       "name": "Halal Chain",
       "symbol": "HLC",
@@ -132,7 +132,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 30136
     },
     {
-      "address": "EMUWzpCfRZbgyQZd6oHdkXsuaJgVy8ncdL",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "2f65a0af11d50d2d15962db39d7f7b0619ed55ae",
       "name": "MED TOKEN",
       "symbol": "MED",
@@ -143,7 +143,7 @@ GET /zrc20?limit=10&offset=0
       "transactions": 27933
     },
     {
-      "address": "ETdR6C6aeX5MqCkNBYNBdTPa5rEdc1khne",
+      "address": "e66c1aeba394ccda63c7644d68b4c771ef6548d9",
       "addressHex": "72e531e37c31ecbe336208fd66e93b48df3af420",
       "name": "Luna Stars",
       "symbol": "LSTR",
@@ -203,7 +203,7 @@ GET /zrc20/:token/txs
 
 **Request**
 ```
-GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
+GET /zrc20/e66c1aeba394ccda63c7644d68b4c771ef6548d9/txs?limit=5&offset=0
 ```
 
 **Response**
@@ -217,8 +217,8 @@ GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
       "blockHeight": 408403,
       "blockHash": "7feac3a08ae8f5561c39e3c1a9c4c5d79c124bf8d79a671145db6933fdb08266",
       "timestamp": 1563009408,
-      "from": "QWSTGRwdScLfdr6agUqR4G7ow4Mjc4e5re",
-      "to": "QanTJBm9NTXqiFYNe9rWLi3dJPSTfoHZrL",
+      "from": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
+      "to": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
       "value": "373300000000"
     },
     {
@@ -227,8 +227,8 @@ GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
       "blockHeight": 408402,
       "blockHash": "f74fa86a8bb9eee226eebcdac76e10e25f966b791bc05b2ab16db9e00b396af6",
       "timestamp": 1563009328,
-      "from": "QUZ6sqXN5dXWUAQniy9uPVpC3QjyXhoznz",
-      "to": "QhXS93hPpUcjoDxo192bmrbDubhH5UoQDp",
+      "from": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
+      "to": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
       "value": "143458584740"
     },
     {
@@ -237,8 +237,8 @@ GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
       "blockHeight": 408402,
       "blockHash": "f74fa86a8bb9eee226eebcdac76e10e25f966b791bc05b2ab16db9e00b396af6",
       "timestamp": 1563009328,
-      "from": "QaDcm9UeGveyVWY9UiNRN9cTsFMe8v2k2t",
-      "to": "QhXS93hPpUcjoDxo192bmrbDubhH5UoQDp",
+      "from": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
+      "to": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
       "value": "1097495687249"
     },
     {
@@ -247,8 +247,8 @@ GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
       "blockHeight": 408398,
       "blockHash": "4da2cc6042360ade09b4a48b2512fb8e950c97d196e6729718d7301296f0bc3e",
       "timestamp": 1563009056,
-      "from": "QWSTGRwdScLfdr6agUqR4G7ow4Mjc4e5re",
-      "to": "QUZ6sqXN5dXWUAQniy9uPVpC3QjyXhoznz",
+      "from": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
+      "to": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
       "value": "70729292370"
     },
     {
@@ -257,8 +257,8 @@ GET /zrc20/f2033ede578e17fa6231047265010445bca8cf1c/txs?limit=5&offset=0
       "blockHeight": 408398,
       "blockHash": "4da2cc6042360ade09b4a48b2512fb8e950c97d196e6729718d7301296f0bc3e",
       "timestamp": 1563009056,
-      "from": "QWSTGRwdScLfdr6agUqR4G7ow4Mjc4e5re",
-      "to": "QTSbcq4y5i4SgxSc6Cz5yDV9LEQBKW4eQE",
+      "from": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
+      "to": "ZENBeC316wc8hChYPSCteWz3X188nTRkyE",
       "value": "1000000000"
     }
   ]
