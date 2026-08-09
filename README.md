@@ -46,7 +46,7 @@
 
 These examples use live ZHCASH data from zeroscan and are safe for API smoke checks:
 
-* Example live ZHCASH address: `ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi`
+* Example live ZHCASH address with ZRC20 balances and a ZRC721 NFT: `ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi`
 * OK token contract: `e66c1aeba394ccda63c7644d68b4c771ef6548d9`
 * OK token page: `https://zeroscan.st/contract/e66c1aeba394ccda63c7644d68b4c771ef6548d9`
 

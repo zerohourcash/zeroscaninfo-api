@@ -83,6 +83,7 @@ const legacyToken20 = ['q', 'rc20'].join('')
 const legacyToken721 = ['q', 'rc721'].join('')
 const zhcExampleAddress = 'ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi'
 const okTokenContract = 'e66c1aeba394ccda63c7644d68b4c771ef6548d9'
+const zrc721ExampleName = 'Together SN26 gold'
 const legacyBase58AddressPattern = /\bQ[A-HJ-NP-Za-km-z1-9]{25,40}\b/
 const legacyContractAddressPattern = /\bE[A-HJ-NP-Za-km-z1-9]{25,40}\b/
 
@@ -178,6 +179,7 @@ assertGetExamplesHaveClickableZeroscanLinks('README.md')
   const docs = listFiles('doc').filter(file => file.endsWith('.md'))
   const combinedDocs = docs.map(read).join('\n')
   assert(combinedDocs.includes(zhcExampleAddress), 'docs must include the checked ZHCASH example address')
+  assert(combinedDocs.includes(zrc721ExampleName), 'docs must include the checked ZRC721 example NFT')
   assert(combinedDocs.includes(okTokenContract), 'docs must include the checked OK token contract')
 }
 

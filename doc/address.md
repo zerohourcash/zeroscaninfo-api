@@ -132,7 +132,15 @@ GET /address/ZGqDPGCds5CBRHLZZCnYWsYWYPF3i9NCvi
       "balance": "1000000000"
     }
   ],
-  "zrc721Balances": [],
+  "zrc721Balances": [
+    {
+      "address": "a42dcf3c0a9224c90b53167777d29d7a244b819e",
+      "addressHex": "a42dcf3c0a9224c90b53167777d29d7a244b819e",
+      "name": "Together SN26 gold",
+      "symbol": "SN26",
+      "count": 1
+    }
+  ],
   "ranking": 1125,
   "transactionCount": 130,
   "blocksMined": 0

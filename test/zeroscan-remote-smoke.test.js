@@ -53,6 +53,8 @@ const checks = [
       assert.strictEqual(typeof body.balance, 'string', 'address balance must be a string')
       assert(Array.isArray(body.zrc20Balances), 'address must expose zrc20Balances')
       assert(body.zrc20Balances.length > 0, 'example address must include token balances')
+      assert(Array.isArray(body.zrc721Balances), 'address must expose zrc721Balances')
+      assert(body.zrc721Balances.some(token => token.name === 'Together SN26 gold'), 'example address must include Together SN26 gold NFT')
     }
   },
   {
