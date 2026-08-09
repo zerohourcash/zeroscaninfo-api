@@ -41,6 +41,8 @@
 * `https://ws.zeroscan.st/` for mainnet
 * `https://ws.zeroscan.io/` for testnet
 
+`/info` and `/supply` use the ZHCASH node `getblockchaininfo.moneysupply` value as the source of truth. The value is cached by the API and refreshed once per day to avoid unnecessary node load.
+
 
 ## Verified ZHCASH Examples
 

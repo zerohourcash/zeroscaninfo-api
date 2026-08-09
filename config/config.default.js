@@ -63,6 +63,8 @@ exports.zeroscaninfo = {
     process.env.ZEROSCANINFO_PRIMARY || 'https://ws.zeroscan.st',
     process.env.ZEROSCANINFO_SECONDARY || 'https://ws.zeroscan.io'
   ],
+  supplyCacheTtl: Number(process.env.ZEROSCANINFO_SUPPLY_CACHE_TTL) || 24 * 60 * 60 * 1000,
+  supplyRetryInterval: Number(process.env.ZEROSCANINFO_SUPPLY_RETRY_INTERVAL) || 10 * 60 * 1000,
   rpc: {
     protocol: 'http',
     host: 'localhost',

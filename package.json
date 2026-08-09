@@ -5,7 +5,7 @@
     "start": "egg-scripts start --title=zeroscaninfo-api --sticky --daemon",
     "stop": "egg-scripts stop --title=zeroscaninfo-api",
     "dev": "egg-bin dev",
-    "test": "node test/zeroscan-config.test.js",
+    "test": "node test/zeroscan-config.test.js && node test/supply-cache.test.js",
     "test:remote": "node test/zeroscan-remote-smoke.test.js",
     "lint": "eslint --ext .js app config"
   },

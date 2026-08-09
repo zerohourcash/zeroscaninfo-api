@@ -17,11 +17,11 @@ GET /info
 **Response**
 ```json
 {
-  "height": 405961,
-  "supply": 101603844,
-  "circulatingSupply": 95853844,
-  "netStakeWeight": 1095728543244388,
-  "feeRate": 0.00401787,
+  "height": 1671685,
+  "supply": 9317348000,
+  "circulatingSupply": 9311598000,
+  "netStakeWeight": 79698587350447620,
+  "feeRate": 2.74041999,
   "dgpInfo": {
     "maxBlockSize": 2000000,
     "minGasPrice": 40,
@@ -33,6 +33,8 @@ GET /info
 
 ## Supply
 
+Returns the ZHCASH node `getblockchaininfo.moneysupply` value. The API caches this value and refreshes it once per day to avoid unnecessary node load.
+
 **Request**
 ```
 GET /supply
@@ -41,7 +43,7 @@ GET /supply
 
 **Response**
 ```json
-101603852
+9317348000
 ```
 
 

@@ -6,17 +6,80 @@ class InfoService extends Service {
     let stakeWeight = JSON.parse(await this.app.redis.hget(this.app.name, 'stakeweight')) || 0
     let feeRate = JSON.parse(await this.app.redis.hget(this.app.name, 'feerate')).find(item => item.blocks === 10).feeRate || 0.004
     let dgpInfo = JSON.parse(await this.app.redis.hget(this.app.name, 'dgpinfo')) || {}
+    let supply = await this.getTotalSupply()
     return {
       height,
-      supply: this.getTotalSupply(),
-      ...this.app.chain.name === 'mainnet' ? {circulatingSupply: this.getCirculatingSupply()} : {},
+      supply,
+      ...this.app.chain.name === 'mainnet' ? {circulatingSupply: await this.getCirculatingSupply(supply)} : {},
       netStakeWeight: Math.round(stakeWeight),
       feeRate,
       dgpInfo
     }
   }
 
-  getTotalSupply() {
+  async getTotalSupply() {
+    let cachedSupply = await this.getCachedNodeSupply()
+    if (cachedSupply != null) {
+      return cachedSupply
+    }
+
+    try {
+      return await this.updateNodeSupplyCache()
+    } catch (err) {
+      this.ctx.logger.warn('[supply] failed to refresh node moneysupply: %s', err.message)
+      let staleSupply = await this.getCachedNodeSupply({allowStale: true})
+      if (staleSupply != null) {
+        return staleSupply
+      }
+      return this.getEstimatedTotalSupply()
+    }
+  }
+
+  async getCachedNodeSupply({allowStale = false} = {}) {
+    let supply = JSON.parse(await this.app.redis.hget(this.app.name, 'supply'))
+    let updatedAt = Number(await this.app.redis.hget(this.app.name, 'supply-updated-at'))
+    if (!Number.isFinite(supply) || !Number.isFinite(updatedAt)) {
+      return null
+    }
+    if (allowStale || Date.now() - updatedAt < this.app.config.zeroscaninfo.supplyCacheTtl) {
+      return supply
+    }
+    return null
+  }
+
+  async updateNodeSupplyCache({force = false} = {}) {
+    if (!force && await this.isSupplyRefreshThrottled()) {
+      let staleSupply = await this.getCachedNodeSupply({allowStale: true})
+      if (staleSupply != null) {
+        return staleSupply
+      }
+      throw new Error('node supply refresh is throttled')
+    }
+
+    await this.app.redis.hset(this.app.name, 'supply-fetch-attempted-at', Date.now())
+    let supply = await this.getNodeMoneySupply()
+    await this.app.redis.hset(this.app.name, 'supply', JSON.stringify(supply))
+    await this.app.redis.hset(this.app.name, 'supply-updated-at', Date.now())
+    return supply
+  }
+
+  async isSupplyRefreshThrottled() {
+    let attemptedAt = Number(await this.app.redis.hget(this.app.name, 'supply-fetch-attempted-at'))
+    return Number.isFinite(attemptedAt)
+      && Date.now() - attemptedAt < this.app.config.zeroscaninfo.supplyRetryInterval
+  }
+
+  async getNodeMoneySupply() {
+    let client = new this.app.zeroscaninfo.rpc(this.app.config.zeroscaninfo.rpc)
+    let info = await client.getblockchaininfo()
+    let supply = Number(info.moneysupply)
+    if (!Number.isFinite(supply)) {
+      throw new Error('node getblockchaininfo did not return numeric moneysupply')
+    }
+    return supply
+  }
+
+  getEstimatedTotalSupply() {
     let height = this.app.blockchainInfo.tip.height
     if (height <= this.app.chain.lastPoWBlockHeight) {
       return height * 20000
@@ -39,9 +102,8 @@ class InfoService extends Service {
     return 1e8 + 985500 * 4 * (1 - 1 / 2 ** 7) / (1 - 1 / 2)
   }
 
-  getCirculatingSupply() {
-    let height = this.app.blockchainInfo.tip.height
-    let totalSupply = this.getTotalSupply(height)
+  async getCirculatingSupply(totalSupply = null) {
+    totalSupply = totalSupply == null ? await this.getTotalSupply() : totalSupply
     if (this.app.chain.name === 'mainnet') {
       return totalSupply - 575e4
     } else {

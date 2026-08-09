@@ -113,6 +113,8 @@ assertGetExamplesHaveClickableZeroscanLinks('README.md')
   assert(config.includes('zeroscan.st'), 'primary zeroscan endpoint is missing')
   assert(config.includes('zeroscan.io'), 'secondary zeroscan endpoint is missing')
   assert(config.includes('3889'), 'ZHCASH RPC port 3889 must be retained')
+  assert(config.includes('supplyCacheTtl'), 'node supply cache TTL config is missing')
+  assert(config.includes('24 * 60 * 60 * 1000'), 'node supply must be cached for one day by default')
   assert(config.includes("'zhcash_mainnet'"), 'database name must be ZHCASH-specific')
   assert(config.includes('zhc-zero-hour-cash'), 'CoinGecko ZHC coin id is missing')
 }
@@ -128,6 +130,18 @@ assertGetExamplesHaveClickableZeroscanLinks('README.md')
   assert(!misc.includes('1684'), 'Qtum CoinMarketCap coin id must not be used')
   assert(misc.includes('api.coingecko.com'), 'price service must use ZHC price source')
   assert(misc.includes('coingeckoCoinId'), 'price service must use configured CoinGecko id')
+}
+
+{
+  const infoService = read('app/service/info.js')
+  const infoController = read('app/controller/info.js')
+  assert(infoService.includes('getblockchaininfo'), 'supply must be fetched from node getblockchaininfo')
+  assert(infoService.includes('moneysupply'), 'supply must use node moneysupply')
+  assert(infoService.includes('getEstimatedTotalSupply'), 'legacy formula must only remain as explicit fallback')
+  assert(infoService.includes('supply-updated-at'), 'supply cache timestamp is missing')
+  assert(infoController.includes('this.ctx.body = await this.ctx.service.info.getTotalSupply()'), '/supply controller must await cached node supply')
+  assert(infoController.includes('this.ctx.body = await this.ctx.service.info.getCirculatingSupply()'), '/circulating-supply controller must await cached node supply')
+  assert(read('app/schedule/update-supply.js').includes("cron: '0 0 * * *'"), 'supply scheduler must refresh once daily')
 }
 
 {
